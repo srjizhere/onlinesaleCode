@@ -23,9 +23,9 @@ department_df['NAME'] = pd.Categorical(department_df['NAME'], categories=average
 # Merge the average salaries with the department names while preserving the order
 result_df = pd.merge(department_df, average_salary_per_dept, left_on='NAME', right_index=True)
 
-# Get the top three departments with the highest average salary
+# Get the top three departments 
 columns_to_hide = ['ID']
-top_three_departments = result_df.head(3).drop(columns_to_hide,axis=1)
+top_three_departments = result_df.head(3).drop(columns_to_hide,axis=1)    # hide unwanted column 
 
 # Display the top three departments with average monthly salary
 print(top_three_departments)
